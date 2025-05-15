@@ -1,1 +1,43 @@
+🧾 4. Automated AWS Receipt Processing System
+📌 Description:
+This project is a serverless receipt processing system built entirely using AWS services. The system is designed to automatically process uploaded receipt images, extract relevant data using Amazon Textract, store the structured data in DynamoDB, and send an email notification using Amazon SES — all without any manual intervention.
 
+This project demonstrates a practical implementation of event-driven architecture using S3 triggers and AWS Lambda, and showcases how different AWS services can be integrated for real-world automation.
+
+🔁 How It Works:
+User Upload
+A user uploads a receipt image (JPEG/PNG) to an Amazon S3 bucket.
+
+S3 Event Trigger
+The upload triggers an AWS Lambda function via an S3 event notification.
+
+Data Extraction (Amazon Textract)
+The Lambda function calls Amazon Textract, which uses OCR (Optical Character Recognition) to extract text data from the uploaded receipt.
+
+Data Processing
+Textract returns structured text data (like item names, prices, total amount, date, etc.), which the Lambda function parses and organizes.
+
+Data Storage (DynamoDB)
+The parsed data is saved into an Amazon DynamoDB table, which serves as the system’s lightweight, scalable NoSQL database.
+
+Email Notification (Amazon SES)
+Once the data is stored, the Lambda function sends a confirmation email with receipt details using Amazon Simple Email Service (SES).
+
+🧰 AWS Services Used:
+Service	Purpose
+Amazon S3	To store uploaded receipt images
+AWS Lambda	To handle processing logic triggered by S3
+Amazon Textract	To extract structured text from receipt images
+Amazon DynamoDB	To store the processed receipt data
+Amazon SES	To send receipt confirmation emails
+
+📈 Benefits / Highlights:
+Completely serverless and event-driven
+
+Uses OCR capabilities of Textract for real-time document processing
+
+Secure and scalable solution using IAM roles, Lambda timeouts, and retry settings
+
+Easily extendable for mobile apps, invoice processing, or expense tracking
+
+📷 Architecture Diagram:
