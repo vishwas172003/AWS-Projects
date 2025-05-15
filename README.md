@@ -15,7 +15,7 @@ I am currently learning AWS and preparing for the **AWS Certified Cloud Practiti
 
 ## 🚀 Projects
 
-### 🌐 1. Static Website Hosting using Amazon S3
+### 🌐 1. Automated AWS Receipt Processing System
 - **Description:** Built a serverless receipt processing system that extracts, stores, and emails data from uploaded receipts.
 - How it Works:
 
